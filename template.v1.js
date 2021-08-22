@@ -1,3 +1,6 @@
+// modified distill.pub template v1 for pruning identified exemplers. This version of the
+// distill template is from the world models work by David Ha (https://worldmodels.github.io/).
+
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
 	typeof define === 'function' && define.amd ? define(['exports'], factory) :
@@ -5070,82 +5073,6 @@ var parseIso = +new Date("2000-01-01T00:00:00.000Z")
 
 var expandData = function(dom, data) {
 
-  //
-  // Properties from source
-  //
-
-  //   title: 'Attention and Augmented Recurrent Neural Networks',
-  //   description: 'A visual overview of neural attention, and the powerful extensions of neural networks being built on top of it.',
-  //   url: 'http://distill.pub/2016/augmented-rnns',
-  //   tags: [ 'rnn' ],
-  //   doiSuffix: 1,
-  //   doi: '10.23915/distill.00001',
-  //   volume: 1,
-  //   issue: 9,
-  //   distillPath: '2016/augmented-rnns',
-  //   githubPath: 'distillpub/post--augmented-rnns',
-  //   githubCompareUpdatesUrl: 'https://github.com/distillpub/post--augmented-rnns/compare/1596e094d8943d2dc0ea445d92071129c6419c59...3bd9209e0c24d020f87cf6152dcecc6017cbc193',
-  //   updatedDate: 2017-03-21T07:13:16.000Z,
-  //   publishedDate: 2016-09-08T07:00:00.000Z,
-  //   journal: {
-  //     "title": "Distill",
-  //     "full_title": "Distill",
-  //     "abbrev_title": "Distill",
-  //     "url": "http://distill.pub",
-  //     "doi": "10.23915/distill",
-  //     "publisherName": "Distill Working Group",
-  //     "publisherEmail": "admin@distill.pub",
-  //     "issn": "2476-0757",
-  //     "editors": [...],
-  //     "committee": [...]
-  //   }
-
-  //
-  // Computed Properties
-  //
-
-  //   githubUrl: 'https://github.com/distillpub/post--augmented-rnns',
-  //   previewURL: 'http://distill.pub/2016/augmented-rnns/thumbnail.jpg',
-  //   publishedDateRFC: 'Thu, 08 Sep 2016 00:00:00 -0700',
-  //   publishedYear: 2016,
-  //   publishedMonth: 'Sept',
-  //   publishedDay: 8,
-  //   publishedMonthPadded: '09',
-  //   publishedDayPadded: '08',
-  //   updatedDateRFC: 'Tue, 21 Mar 2017 00:13:16 -0700',
-  //   concatenatedAuthors: 'Olah & Carter',
-  //   bibtexAuthors: 'Olah, Chris and Carter, Shan',
-  //   slug: 'olah2016attention'
-  //   authors: [
-  //     {
-  //       "personalURL": null,
-  //       "name": "Chris Olah",
-  //       "firstName": "Chris",
-  //       "lastName": "Olah",
-  //       "affiliationURL": null,
-  //       "affiliation": "Google Brain"
-  //     }
-  //   ],
-  //   bibliography: {
-  //     "gregor2015draw": {
-  //       "title": "DRAW: A recurrent neural network for image generation",
-  //       "author": "Gregor, Karol and Danihelka, Ivo and Graves, Alex and Rezende, Danilo Jimenez and Wierstra, Daan",
-  //       "journal": "arXiv preprint arXiv:1502.04623",
-  //       "year": "2015",
-  //       "url": "https://arxiv.org/pdf/1502.04623.pdf",
-  //       "type": "article"
-  //     },
-  //     ...
-  //   },
-  //   citations: [
-  //     "gregor2015draw",
-  //     "mercier2011humans",
-  //     "dong2014image",
-  //     "dumoulin2016guide",
-  //     "mordvintsev2015inceptionism"
-  //   ],
-
-
   // citations:
   var citations = [];
   var citeTags = [].slice.apply(dom.querySelectorAll("dt-cite"));
@@ -5170,13 +5097,13 @@ var expandData = function(dom, data) {
 
   // paths
   if (!data.distillPath && !data.url) {
-    data.url = "http://distill.pub/";
+    data.url = "";
   } else if (!data.url) {
-    data.url = "http://distill.pub/" + data.distillPath;
+    data.url = "https://varianceofgradients.github.io/";
   }
-  data.githubUrl = "https://github.com/" + data.githubPath;
+  data.githubUrl = "https://github.com/chirag126/VOG";
 
-  data.previewURL = data.previewURL ? data.previewURL : data.url + "/thumbnail.jpg";
+  data.previewURL = "https://cdn.glitch.com/02868eea-fe84-443e-964a-8f04885fa5fa%2Faccuracy_distribution.png?v=1574118354833";
 
   // Homepage
   //data.homepage = !post.noHomepage;
@@ -5219,7 +5146,9 @@ var expandData = function(dom, data) {
 
 };
 
-var favicon = "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA99JREFUeNrsG4t1ozDMzQSM4A2ODUonKBucN2hugtIJ6E1AboLcBiQTkJsANiAb9OCd/OpzMWBJBl5TvaeXPiiyJetry0J8wW3D3QpjRh3GjneXDq+fSQA9s2mH9x3KDhN4foJfCb8N/Jrv+2fnDn8vLRQOplWHVYdvHZYdZsBcZP1vBmh/n8DzEmhUQDPaOuP9pFuY+JwJHwHnCLQE2tnWBGEyXozY9xCUgHMhhjE2I4heVWtgIkZ83wL6Qgxj1obfWBxymPwe+b00BCCRNPbwfb60yleAkkBHGT5AEehIYz7eJrFDMF9CvH4wwhcGHiHMneFvLDQwlwvMLQq58trRcYBWfYn0A0OgHWQUSu25mE+BnoYKnnEJoeIWAifzOv7vLWd2ZKRfWAIme3tOiUaQ3UnLkb0xj1FxRIeEGKaGIHOs9nEgLaaA9i0JRYo1Ic67wJW86KSKE/ZAM8KuVMk8ITVhmxUxJ3Cl2xlm9Vtkeju1+mpCQNxaEGNCY8bs9X2YqwNoQeGjBWut/ma0QAWy/TqAsHx9wSya3I5IRxOfTC+leG+kA/4vSeEcGBtNUN6byhu3+keEZCQJUNh8MAO7HL6H8pQLnsW/Hd4T4lv93TPjfM7A46iEEqbB5EDOvwYNW6tGNZzT/o+CZ6sqZ6wUtR/wf7mi/VL8iNciT6rHih48Y55b4nKCHJCCzb4y0nwFmin3ZEMIoLfZF8F7nncFmvnWBaBj7CGAYA/WGJsUwHdYqVDwAmNsUgAx4CGgAA7GOOxADYOFWOaIKifuVYzmOpREqA21Mo7aPsgiY1PhOMAmxtR+AUbYH3Id2wc0SAFIQTsn9IUGWR8k9jx3vtXSiAacFxTAGakBk9UudkNECd6jLe+6HrshshvIuC6IlLMRy7er+JpcKma24SlE4cFZSZJDGVVrsNvitQhQrDhW0jfiOLfFd47C42eHT56D/BK0To+58Ahj+cAT8HT1UWlfLZCCd/uKawzU0Rh2EyIX/Icqth3niG8ybNroezwe6khdCNxRN+l4XGdOLVLlOOt2hTRJlr1ETIuMAltVTMz70mJrkdGAaZLSmnBEqmAE32JCMmuTlCnRgsBENtOUpHhvvsYIL0ibnBkaC6QvKcR7738GKp0AKnim7xgUSNv1bpS8QwhBt8r+EP47v/oyRK/S34yJ9nT+AN0Tkm4OdB9E4BsmXM3SnMlRFUrtp6IDpV2eKzdYvF3etm3KhQksbOLChGkSmcBdmcEwvqkrMy5BzL00NZeu3qPYJOOuCc+5NjcWKXQxFvTa3NoXJ4d8in7fiAUuTt781dkvuHX4K8AA2Usy7yNKLy0AAAAASUVORK5CYII=\n";
+// public domain globe icon from noun project.
+
+var favicon = "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\n";
 
 /*!
  * escape-html
@@ -5314,9 +5243,11 @@ var meta = function(dom, data) {
     appendHtml(head, ("\n      <meta property=\"article:author\" content=\"" + (a.firstName) + " " + (a.lastName) + "\" />"));
   });
 
+  /* do this on my own.
   appendHead(("\n    <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->\n    <meta property=\"og:type\" content=\"article\"/>\n    <meta property=\"og:title\" content=\"" + (data.title) + "\"/>\n    <meta property=\"og:description\" content=\"" + (data.description) + "\">\n    <meta property=\"og:url\" content=\"" + (data.url) + "\"/>\n    <meta property=\"og:image\" content=\"" + (data.previewURL) + "\"/>\n    <meta property=\"og:locale\" content=\"en_US\" />\n    <meta property=\"og:site_name\" content=\"Distill\" />\n  "));
 
   appendHead(("\n    <!--  https://dev.twitter.com/cards/types/summary -->\n    <meta name=\"twitter:card\" content=\"summary_large_image\">\n    <meta name=\"twitter:title\" content=\"" + (data.title) + "\">\n    <meta name=\"twitter:description\" content=\"" + (data.description) + "\">\n    <meta name=\"twitter:url\" content=\"" + (data.url) + "\">\n    <meta name=\"twitter:image\" content=\"" + (data.previewURL) + "\">\n    <meta name=\"twitter:image:width\" content=\"560\">\n    <meta name=\"twitter:image:height\" content=\"295\">\n  "));
+  */
 
   // if this is a proprer article, generate Google Scholar meta data
   if (data.doiSuffix){
@@ -5406,7 +5337,8 @@ function citation_meta_content(ref){
   return content;
 }
 
-var html$1 = "\n<style>\n  dt-banner {\n    background: #FFF59D;\n    display: block;\n    text-align: center;\n    color: black;\n    height: 70px;\n    line-height: 70px;\n  }\n</style>\n<div>This article is a draft, awaiting review for publication in Distill</div>\n";
+var html$1 = "";
+//var html$1 = "\n<style>\n  dt-banner {\n    background: #FFF59D;\n    display: block;\n    text-align: center;\n    color: black;\n    height: 70px;\n    line-height: 70px;\n  }\n</style>\n<div>This article is a draft. Please do not share the URL. Thanks!</div>\n";
 
 var banner = function(dom, data) {
   var banner = dom.createElement("dt-banner");
@@ -6250,7 +6182,9 @@ var citation = function(dom, data) {
       var url = ent.url;
       var arxiv_match = (/arxiv\.org\/abs\/([0-9\.]*)/).exec(url);
       if (arxiv_match != null){
-        url = "http://arxiv.org/pdf/" + (arxiv_match[1]) + ".pdf";
+        //url = "http://arxiv.org/pdf/" + (arxiv_match[1]) + ".pdf";
+        // don't like linking to pdf by default:
+        url = "http://arxiv.org/abs/" + (arxiv_match[1]) + "";
       }
 
       if (url.slice(-4) == ".pdf"){
