@@ -1,57 +1,54 @@
 <!doctype html>
 <html>
 <head>
-  <title>PIE: Pruning Identified Exemplars</title>
+  <title>VoG: Variance Of Gradients</title>
   <!-- Twitter Card data -->
   <meta name="twitter:card" value="summary">
-  <meta name="twitter:title" content="Selective Brain Damage">
-  <meta name="twitter:description" content="What do pruned deep neural networks forget?">
-  <meta name="twitter:url" content="https://weightpruningdamage.github.io/">
+  <meta name="twitter:title" content="Variance Of Gradients">
+  <meta name="twitter:description" content="Estimating Example Difficulty using Variance of Gradients">
+  <meta name="twitter:url" content="https://varianceofgradients.github.io/">
   <meta name="twitter:image" content="https://cdn.glitch.com/02868eea-fe84-443e-964a-8f04885fa5fa%2Faccuracy_distribution_updated.png?v=1574118491306">
-  <meta name="twitter:site" content="@googleai" />
+  <meta name="twitter:site" content="@_cagarwal" />
 
   <meta property="og:image:width" content="1920" />
   <meta property="og:image:height" content="1080" />
-  <meta property="og:title" content="Selective Brain Damage" />
+  <meta property="og:title" content="Variance Of Gradients" />
   <meta property="og:type" content="article" />
-  <meta property="og:description" content="What do pruned deep neural networks forget?" />
+  <meta property="og:description" content="Estimating Example Difficulty using Variance of Gradients" />
   <meta property="og:image" content="https://cdn.glitch.com/02868eea-fe84-443e-964a-8f04885fa5fa%2Faccuracy_distribution.png?v=1574118354833" />
-  <meta property="og:url" content="https://weightpruningdamage.github.io/" />
-  <meta property="og:site_name" content="Deep Neural Network Pruning">
+  <meta property="og:url" content="https://varianceofgradients.github.io/" />
+  <meta property="og:site_name" content="Variance Of Gradients">
   <meta property="og:locale" content="en_US">
 
 
   <!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
-  <meta name="citation_title" content="Selective Brain Damage: Measuring the Disparate Impact of Model Pruning">
-  <meta name="citation_fulltext_html_url" content="https://weightpruningdamage.github.io/">
-   <meta name="citation_pdf_url" content="https://arxiv.org/abs/1911.05248">
+  <meta name="citation_title" content="Estimating Example Difficulty using Variance of Gradients">
+  <meta name="citation_fulltext_html_url" content="https://varianceofgradients.github.io/">
+   <meta name="citation_pdf_url" content="https://arxiv.org/abs/2008.11600">
   <meta name="citation_fulltext_world_readable" content="">
+  <meta name="citation_author" content="Agarwal, Chirag">
+  <meta name="citation_author_institution" content="Harvard University">
+<!--  <meta name="citation_author" content="D'souza, Daniel">-->  # TODO DD
+<!--  <meta name="citation_author_institution" content="ProQuest, MLC">-->
   <meta name="citation_author" content="Hooker, Sara">
   <meta name="citation_author_institution" content="Google Brain">
-  <meta name="citation_author" content="Courville, Aaron">
-  <meta name="citation_author_institution" content="MILA">
-  <meta name="citation_author" content="Dauphin, Yann">
-  <meta name="citation_author_institution" content="Google Brain">
-  <meta name="citation_author" content="Frome, Andrea">
-  <meta name="citation_author_institution" content="Google Brain">
-  <meta name="citation_publication_date" content="2019/11/13">
+  <meta name="citation_publication_date" content="2020/10/24">  # TODO DD
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-152824096-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-152824096-1');
-</script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->   # TODO DD
+<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-152824096-1"></script>-->
+<!--<script>-->
+<!--  window.dataLayer = window.dataLayer || [];-->
+<!--  function gtag(){dataLayer.push(arguments);}-->
+<!--  gtag('js', new Date());-->
+<!--  gtag('config', 'UA-152824096-1');-->
+<!--</script>-->
 
   <!--  https://schema.org/Article -->
-  <meta property="description" itemprop="description" content="Measuring the disparate impact of model pruning on classes and individual images.">
+  <meta property="description" itemprop="description" content="Estimating Example Difficulty using Variance of Gradients">
+  <meta property="article:author" content="Chirag Agarwal">
+<!--  <meta property="article:author" content="Daniel D'souza">--> #TODO DD
   <meta property="article:author" content="Sara Hooker">
-  <meta property="article:author" content="Yann Dauphin">
-  <meta property="article:author" content="Aaron Courville">
-  <meta property="article:author" content="Andrea Frome">
-  <meta property="article:url" content="https://weightpruningdamage.github.io/" />
+  <meta property="article:url" content="https://varianceofgradients.github.io/" />
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
   <style>
@@ -453,67 +450,42 @@ figcaption .strong_, {
       <div class="cover-container">
         <div class="icons">
           <div class="paper-icon">
-            <a href="https://arxiv.org/abs/1911.05248">
+            <a href="https://arxiv.org/abs/2008.11600">
               <img src="https://cdn.glitch.com/a08d19a0-dea5-4f06-9627-caa859e2d931%2Fpaper_icon.png?v=1572561063939" style="width: 100px"/><br>Paper
             </a>
           </div>
           <div class="paper-icon" style="margin-left: 20px">
-            <a href="https://github.com/google-research/google-research/tree/master/pruning_identified_exemplars">
+            <a href="https://github.com/chirag126/VOG">
               <img src="https://cdn.glitch.com/a08d19a0-dea5-4f06-9627-caa859e2d931%2Fcode_icon.png?v=1572562103868" style="width: 100px"/><br>Code
             </a>
           </div>
         </div>
-        <div class="title"><h2>Selective Brain Damage: Measuring the Disparate Impact of Model Compression</h2></div>
-        <div class="authors">Sara Hooker, Aaron Courville, Yann Dauphin, Andrea Frome</div>
+        <div class="title"><h2>Estimating Example Difficulty using Variance of Gradients</h2></div>
+        <div class="authors">Chirag Agarwal, Sara Hooker</div>
+<!--          <div class="authors">Chirag Agarwal, Daniel D'souza, Sara Hooker</div>-->
       <div class="institutions"></div>
        </div>
     </div>
       <div class="descriptions_">
-	<h3>What is lost when we prune deep neural networks?</h3>
+	<h3>Question 1?</h3>
         </div>
          <div class="description_">
-          <p>Between infancy and adulthood, the number of synapses in our brain first multiply and then fall.
-            Synaptic pruning improves efficiency by removing redundant neurons and strengthening synaptic connections
-            that are most useful for the environment.
-            Despite losing 50 % of all synapses between age two and ten, the brain continues to function <dt-cite key="RAKI1994"></dt-cite>.
+          <p>Answer 1 Para 1<dt-cite key="RAKI1994"></dt-cite>.
             The phrase "use it or lose it" is frequently used to describe the environmental influence of the learning process
             on synaptic  pruning,
             however there is little scientific
             consensus on <em>what</em> exactly is lost <dt-cite key="Sowell8223,CASEY2000241"></dt-cite>.</p>
 
-           <p>In 1990, a popular paper was published titled <i>Optimal Brain Damage</i>
-              <dt-cite key="Cun90optimalbrain"></dt-cite>.
-              The paper was amongst the first  <dt-cite key="Hassibi93secondorder,1992_nowlan_hinton,NIPS1990_Andreas_weight_elimination,Mozer1988"></dt-cite> to propose that deep neural networks could be pruned of "excess capacity" in a similar way
-              to our biological synaptic pruning. In deep neural networks, weights are pruned or removed by
-              from the network by setting the value to zero.
-              Today there are many possible pruning methods to chose from, and pruned models likely drive many of the algorithms on your phone.</p>
+          <p>Answer 1 Para 2 </p>
 
-             <p>  At face value, pruning does appear to promise you can can (almost) have it all.
-               State of art pruning methods remove the
-               majority of the weights with minimal degradation to top-1 accuracy<dt-cite key="tgale_shooker_2019"></dt-cite>.
-              These newly slimmed down networks require less memory, energy consumption
-               and are faster at producing predictions.
-               All these attributes make pruned models ideal for deploying deep neural networks to resource constrained environments.</p>
                  <div class="content_reduced_slightly">
      <img src="https://cdn.glitch.com/f1ebd1ee-d1ac-4538-8ad5-0034e332e4ae%2Fsynaptic_pruning_image.png?v=1574277111414" alt="abstract_1" style="width:100%">
       <div class="figcaption">
-         <strong_>Synaptic pruning removes redundant neurons and strengthens connections that are most useful for the environment. (Figure courtesy of Seeman, 1999)</strong_><br>
+         <strong_>Fig 1 Caption</strong_><br>
        </div>
              </div>
+         <p>Answer 1 Para 3 </p>
 
-		 <p> However, the ability to prune networks with seemingly so little degradation to generalization performance is puzzling. The cost
-              to top-1 accuracy appears minimal
-              if it is spread uniformally across all classes, but what if the cost is
-              concentrated in only a few classes?
-              <i>Are certain types of examples or classes disproportionately impacted by
-                pruning?</i></p>
-            <p> An understanding of these trade-offs is critical when deep neural networks are used for sensitive tasks such
-              as hiring <dt-cite key="Dastin_2018,Harwell_2019"></dt-cite>, health care diagnostics <dt-cite key="2019Hongtao,Gruetzemacher20183DDL"></dt-cite> or self-driving cars <dt-cite key="2017Telsa,2019Uber"></dt-cite>. For these tasks, the introduction of pruning may be at odds with fairness objectives
-              to avoid disparate treatment of protected attributes and/or the need to guarantee a level of recall for certain classes <dt-cite key="2016fair_prediction,2019arXiv190110566Z,NIPS2016_6316,2014certifying_removing_disparate_impact,false_discovery_rates"></dt-cite>.
-              Pruning is already commonly used in these domains, often driven by the resource constraints of deploying models to mobile phone or embedded devices <dt-cite key="2017Andre"></dt-cite>. </p>
-       <p> In this work, we propose a formal framework to identify the classes and images where there is a high level of disagreement or difference in
-              generalization performance between pruned and non-pruned models.  We find that certain examples, which we term pruning identified exemplars (PIEs),
-              and classes are systematically more impacted by the introduction of sparsity. </p>
   <div>
 
            <div class="imgs-container">
@@ -521,30 +493,25 @@ figcaption .strong_, {
             <div class="descriptions_">
               <p> The primary findings of our work can be summarized as follows: </p>
 
-          <div class="img-container">1. Pruning would be better described as "selective brain damage." Pruning has a non-uniform impact across classes; a fraction of classes are disproportionately and systematically impacted by the introduction of sparsity.</div>
-           <div class="img-container">2. The examples most impacted by pruning, which we term <i>Pruning Identified Exemplars</i> (PIEs), are more challenging for both pruned and non-pruned models to classify.</div>
-          <div class="img-container">3. Pruning significantly reduces robustness to image corruptions and natural adversarial images.</div>
+          <div class="img-container">1. Finding 1</div>
+           <div class="img-container">2. Finding 2</div>
+          <div class="img-container">3. Finding 3</div>
       </div>
      </div>
 
    <div class="descriptions_">
-  <h3>PIE: Pruning Identified Exemplars</h3>
+  <h3>Sub-Heading 1</h3>
      </div>
    <div class="description_">
 
-        <p> PIEs are images where the most frequent prediction differs between a population of independently trained pruned and non-pruned models. We focus on open source research datasets such as ImageNet and find that PIE images are more challenging for both pruned and non-pruned models.
-       Restricting the test-set to a random sample of PIE images sharply degrades top-1 accuracy.
-     Removing PIEs from the test-set improves top-1 accuracy for both pruned and non-pruned models.  </p>
+        <p> Some Description here </p>
 
       <div class="content">
   <hr>
      <div class="figcaption">
-         <strong_>PIE images are more challenging for both pruned and non-pruned models to classify.
-           Pruning appears to cause deep neural networks to "forget" the examples where there is already a high level of predictive uncertainty.
+         <strong_>Caption1
            <br><br>
-           Go ahead and click on the buttons below to view a sample of ImageNet PIEs in each category.
-      The labels below each image are: 1) true ground truth ImageNet label, 2) baseline non-pruned
-           modal prediction, 3)  most frequent prediction from a population of pruned ResNet-50 models.</strong_>
+           Click below.</strong_>
   </div>
 <br>
 <div id="myBtnContainer">
@@ -903,18 +870,12 @@ figcaption .strong_, {
 </div>
 
 <div class="description_">
-   <p> To better understand why PIEs are more sensitive to capacity,
-    we conducted a limited human study (85 participants) and find that PIEs from the ImageNet test set are more likely to be mislabelled,
-                  depict multiple objects or require fine-grained classification. </p>
-      <p> Over half of all PIE images were classified by human participants as either having an incorrect ground truth label or depicting multiple objects. The over-indexing of poorly structured data hints that
-        the explosion in number of parameters for single image classification tasks like ImageNet may be solving a
-problem that is better addressed in the data cleaning pipeline.  </p>
+   <p> Explanation : Para 1 </p>
+      <p>  Explanation : Para 2 </p>
   <div>
       <div class="content">
      <div class="figcaption">
-      <strong_> PIEs overindex on data that is poorly structured for a single image classification tasks. For these images, predicting the correct ground truth may be an incomplete measure of generalization ability to unseen data.
-        For example, a pruned model that predicts <i>suit</i> instead of the true label of <i>groom</i> would still be considered accurate by most humans. The <i>groom</i> is wearing a <i>suit</i> and thus both labels could be acceptable.
-        However, this prediction would be penalized by measures such as top-1 accuracy.
+      <strong_> Caption 1
         <br><br>
         Click on the buttons below to view a sample of ImageNet PIEs in each category.
      The labels below each image are: 1) true ground truth ImageNet label, 2) baseline non-pruned modal prediction, 3)  most frequent prediction from a population of pruned ResNet-50 models.</strong_>
@@ -1283,16 +1244,12 @@ problem that is better addressed in the data cleaning pipeline.  </p>
 </div>
 </div>
   <div class="description_">
-  <p> On real world datasets, the stakes are often much higher than correctly classifying a <i>paddle</i> or <i>guacamole</i>. For sensitive tasks such as patient risk stratification or medical diagnoses <dt-cite key="NIPS2012_4525"></dt-cite>, our results suggest caution should be excercised before deploying pruned models. </p>
-     <p> PIE provides one tool to become more familiar with the underlying data by surfacing
-      a far smaller subset of examples the model finds challenging to the human expert. This can be extremely valuable for creating human-in-the-loop decisions,
-    where certain atypical examples are re-routed for human inspection <dt-cite key="Leibig2017"></dt-cite> or to aid interpretability as a case based reasoning tool to explain model behavior<dt-cite key="2017Gurumoorthy,Caruana2000,Hooker2019ABF,NIPS2016_6300"></dt-cite>.</p>
-
+  <p> Some Description. </p
 
    <div class="content">
      <div class="figcaption">
        <hr>
-<strong_>Inspecting PIE images can help us understand the types of inputs the model finds most challenging. PIE images are far harder for a model to classify. Removing PIE images improves top-1 generalization performance beyond the baseline.
+<strong_>Caption 1
        <br><br>
 
        Go ahead and click the buttons below.</strong_>
@@ -1347,34 +1304,14 @@ Removing PIE images benefits generalization. Top-1 accuracy improves beyond base
 </div>
 
 <div class="descriptions_">
-<h3>What class categories are impacted by pruning?</h3>
+<h3>Another Question ?</h3>
 </div>
 <div class="description_">
-      <p> ImageNet has 1000 different class categories, which include both every day objects such as <i>cassette player</i> and more nuanced categories that refer to the texture of an object such as <i>velvet</i> or even person types such as <i>groom</i>.
-        If the impact of pruning was uniform across all classes, we would expect the model accuracy on each class to shift by the same
-      number of percentage points as the difference in top-1 accuracy between the pruned and non-pruned model.</p>
-        <p>  This forms our null hypothesis, and we must decide for each class whether
-        to reject the null hypothesis and accept the alternative -- the
-        change to class level recall differs from the change to overall accuracy
-        in a statistically significant way. This amounts to asking -- <i>did the class perform better or worse than expected given the overall change in top-1 accuracy after pruning?</i></p>
-       <p> Evaluating whether the difference between a sample of mean-shifted class accuracy from pruned and non-pruned models is
-        “real” can be thought of as determining whether two data samples are drawn from the same underlying distribution, which is the subject of a large body of goodness of fit literature <dt-cite key="1954anderson_darling,2002huber"></dt-cite>. </p>
-      <p>To compare class level performance between pruned and non-pruned models, we use a two-sample, two-tailed,
-        independent Welch’s t-test <dt-cite key="1947welch"></dt-cite>. We independently train a population of pruned and non-pruned models and apply the t-test
- to determine whether the means of the samples differ significantly.
-        This methodology allows us to identify a subset of classes where model performance either remains relatively robust to the loss of model weights or is overly sensitive to the reduction in capacity.</p>
-
-
+      <p> Some Answer here</p>
       <div class="content">
      <div class="figcaption">
        <hr>
-      <strong_>  We independently train a population of pruned and non-pruned models and apply the t-test to determine whether the means of the samples differ significantly. At all levels of pruning, some classes are impacted far more than others
-        (classes that are statistically significant indicated by pink vs. the classes in grey where the relative change in performance is not statistically significant).
-        <br><br>
-        We plot both the absolute % change in class recall (grey and pink bars) and
-          the normalized accuracy relative to change in overall top-1 accuracy caused by pruning (grey and green markers).
-        <br><br>
-        Go ahead and click the buttons below to see the classes impacted by pruning.</strong_>
+      <strong_> Some Caption here .</strong_>
   </div>
   <br>
 
@@ -1418,43 +1355,21 @@ Removing PIE images benefits generalization. Top-1 accuracy improves beyond base
 </div>
 
   <div class="description_">
-      <p>The directionality and magnitude of the impact of pruning is nuanced and surprising. Our results show that certain classes are relatively robust to the overall degradation experienced
-        by the model whereas others degrade in performance far more than the model itself. This amounts to
-        <em>selective brain damage</em> with performance on certain classes evidencing far more sensitivity
-        to the removal of model capacity.</p>
+      <p>Some more Text</p>
 
-       <p>The classes that experience a significant <em>relative</em> decrease in accuracy are fewer at every level than those that recieve a relative boost, however the magnitude of class decreases is larger
-        than the gains (which pulls overall accuracy downwards).
-        This tells us that the loss in generalization caused by pruning is far more concentrated
-        than the relative gains, with fewer classes bearing
-        the brunt of the degradation caused by weight removal.</p>
-      <p>At higher levels of pruning, more classes are impacted and the absolute % difference widens between the classes most and least impacted. Most real world applications of pruning tend to prune above 50% in order to gain the returns in memory and efficiency.
-       When 90% of the weights are removed, the relative change to 582 out
-       of 1000 ImageNet classes is statistically significant. </p>
  </div>
 <div class="descriptions_">
-<h3>What does this mean for the use of pruned models?</h3>
+<h3>One More Question?</h3>
   </div>
   <div class="description_">
- <p> Pruned models are widely used by many real world machine learning applications. Many of the algorithms on your phone are likely pruned or compressed in some way.
-   Our results are surprising and suggest that
-   a reliance on top-line metrics such as top-1 or
-   top-5 test-set accuracy hides
-   critical details in the ways that pruning
-   impacts model generalization.   </p>
-  <p> However, our methodology offers one way for humans to better understand
-   the trade-offs incurred by pruning and gain intuition about what classes
-   benefit the most from additional capacity. We believe this type of tooling is a valuable first step to help human experts understand the trade-offs incurred by pruning and surface challenging examples for human judgement.</p>
+ <p> Another Answer here</p>
 
 
 <p> We welcome additional discussion and code contributions on the topic of this work. A comprehensive introduction of the methodology,
-  experiment framework and results can be found in our <a href="https://arxiv.org/abs/1911.05248">paper</a> and <a href="https://github.com/google-research/google-research/tree/master/pruning_identified_exemplars">open source code</a>.
-  There is substantial ground we were not able to address within the scope of this work, and underserved areas worthy of
-  future consideration include evaluating the impact of pruning on additional domains such as language and audio, a consideration of
-  different architectures and a comparison of the relative trade-offs incurred by pruning methods with other popular compression techniques such as quantization.
+  experiment framework and results can be found in our <a href="https://arxiv.org/abs/2008.11600">paper</a> and <a href="https://github.com/chirag126/VOG">open source code</a>.
    </p>
-	  <code> Visiting the NeurIPS Google Booth? </code>
-         <code> Take a look at our demo slides <a href="https://drive.google.com/file/d/1VIeV7l9x-KXdT_UdZB54GQxhGHRRQ79T/view?usp=sharing">here</a>.</code>
+	  <code> Final Tips #1 </code>
+         <code> Final Tips #2</code>
 
 </div>
 <script>
@@ -1616,26 +1531,14 @@ for (var i = 0; i < btns4.length; i++) {
 <div class="description_">
 <h3>Acknowledgments</h3>
 
-<p> A special thank you is due to James Wexler, Keren Gu-Lemberg and Prajit Ramachandran for some helpful suggestions about how to visualize and communicate our results in an interactive format.
-   This article was in part prepared using the <a href="https://pair-code.github.io/saliency/">Google AI Pair</a> template and style guide.
-   The citation management for this article uses the <a href="https://github.com/distillpub/template">template v1</a> of the Distill style script. </p>
-
-<p>We thank the generosity of our peers and colleagues for valuable feedback on earlier versions of this work. In particular, we would like to acknowledge the valuable input of Jonas Kemp, Simon Kornblith, Julius Adebayo, Dumitru Erhan, Hugo Larochelle,
-  Nicolas Papernot, Catherine Olsson, Cliff Young, Martin Wattenberg,
-  Utku Evci, James Wexler, Trevor Gale,  Melissa Fabros,
-  Prajit Ramachandran, Pieter Kindermans, Moustapha Cisse, Erich Elsen and Nyalleng Moorosi. </p>
-  <p> We thank the institutional support and encouragement of Dan Nanas,
-  Rita Ruiz, Sally Jesmonth and Alexander Popper. </p>
+<p>We thank XYZ</p>
 
 <h3>Citation</h3>
-<pre class="citation long">@article{hooker2019selective,
-    title={Selective Brain Damage: Measuring the Disparate Impact of Model Pruning},
-    author={Sara Hooker and Aaron Courville and Yann Dauphin and Andrea Frome},
-    year={2019},
-    url={https://arxiv.org/abs/1911.05248},
-    eprint={1911.05248},
-    archivePrefix={arXiv},
-    primaryClass={cs.LG}
+<pre class="citation long">@article{agarwal2020estimating,
+title={Estimating Example Difficulty using Variance of Gradients},
+author={Agarwal, Chirag and Hooker, Sara},
+journal={arXiv preprint arXiv:2008.11600},
+year={2020}
 }
 
 </pre>
