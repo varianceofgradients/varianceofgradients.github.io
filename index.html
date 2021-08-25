@@ -467,35 +467,32 @@ figcaption .strong_, {
        </div>
     </div>
       <div class="descriptions_">
-	<h3>Question 1?</h3>
+	<h3>How do we identify examples that are challenging for a model to classify?</h3>
         </div>
          <div class="description_">
-          <p>Answer 1 Para 1<dt-cite key="RAKI1994"></dt-cite>.
-            The phrase "use it or lose it" is frequently used to describe the environmental influence of the learning process
-            on synaptic  pruning,
-            however there is little scientific
-            consensus on <em>what</em> exactly is lost <dt-cite key="Sowell8223,CASEY2000241"></dt-cite>.</p>
+          <p>In machine learning, a question of great interest is understanding what examples are challenging for a model to classify. Identifying atypical examples helps inform safe deployment of models, isolates examples that require further human inspection, and provides interpretability into model behavior. In this work, we propose Variance of Gradients (VOG) as a valuable and efficient proxy metric for detecting outliers in the data distribution. We provide quantitative and qualitative support that VOG is a meaningful way to rank data by difficulty and to surface a tractable subset of the most challenging examples for human-in-the-loop auditing. Data points with high VOG scores are far more difficult for the model to learn and over-index on corrupted or memorized examples</p>
 
-          <p>Answer 1 Para 2 </p>
+          <p>It is becoming increasingly important for deep neural networks (DNNs) to make decisions that are interpretable to both researchers and end-users. In sensitive domains such as health care diagnostics. Our work offers an efficient method to rank the global difficulty of examples and automatically surface a possible subset to aid human interpretability. VOG can be computed using checkpoints stored over the course of training and is model agnostic. Alternatively, VOG can be computed using the predicted label, which makes it an unsupervised auditing tool at test time.</p>
 
                  <div class="content_reduced_slightly">
-     <img src="https://cdn.glitch.com/f1ebd1ee-d1ac-4538-8ad5-0034e332e4ae%2Fsynaptic_pruning_image.png?v=1574277111414" alt="abstract_1" style="width:100%">
+     <img src="./figures/cifar100_apple_pre.jpg" alt="abstract_pre" style="width:100%">
+     <img src="./figures/cifar100_apple_post.jpg" alt="abstract_post" style="width:100%">
       <div class="figcaption">
-         <strong_>Fig 1 Caption</strong_><br>
+         <strong_>During the early training stages, Lower VoG appears to capture a color(red) bias. During Late Stage Training, Lower VoG images evidence uncluttered backgrounds. High VoG images present unusual vantage points throughout training.</strong_><br>
        </div>
              </div>
-         <p>Answer 1 Para 3 </p>
-
+         <p>In this work, we start with a simple hypothesis – examples that a model has difficulty learning will exhibit higher variance in gradient updates over the course of training. On the other hand, we expect the backpropagated gradients of the samples that are relatively easier to learn will have lower variance because performance on that example does not consistently dominate the loss over the course of training, i.e., the gradient updates for the relatively easier examples are expected to stabilize early in training and converge to a narrow range of values. We term this measure of difficulty class normalized ranking mechanism Variance of Gradients (V OG) and demonstrate across a variety of large-scale datasets that it efficiently ranks the difficulty of both training and test examples. V OG can be computed using either the predicted or true label, making it a valuable unsupervised auditing tool at test time when the true label is unknown. </p>
   <div>
 
            <div class="imgs-container">
 
             <div class="descriptions_">
-              <p> The primary findings of our work can be summarized as follows: </p>
+              <p> The primary contributions of our work can be summarized as follows: </p>
 
-          <div class="img-container">1. Finding 1</div>
-           <div class="img-container">2. Finding 2</div>
-          <div class="img-container">3. Finding 3</div>
+          <div class="img-container">1. We propose Variance of Gradient (VOG) – a class-normalized variance gradient score for determining the relative ease of learning data samples within a given class</div>
+          <div class="img-container">2. We show that VOG is an effective auditing tool for ranking high dimensional datasets by difficulty</div>
+          <div class="img-container">3. VOG identifies clusters of images with clearly distinct semantic properties</div>
+          <div class="img-container">4. VOG effectively surfaces OOD and memorized examples.</div>
       </div>
      </div>
 
