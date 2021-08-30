@@ -495,7 +495,377 @@ figcaption .strong_, {
           <div class="img-container">4. VOG effectively surfaces OOD and memorized examples.</div>
       </div>
      </div>
+   <div class="descriptions_">
+  <h3>Auditing Datasets</h3>
+     </div>
+   <div class="description_">
 
+        <p> VoG can be an effective tool to audit high-dimensional datasets. Below, we plot XYZ </p>
+
+      <div class="content">
+  <hr>
+     <div class="figcaption">
+         <strong_>Caption1
+           <br><br>
+           Click below.</strong_>
+  </div>
+<br>
+<div id="myBtnContainer">
+  <button class="btn active_1" onclick="filterSelection('atypical')"> atypical examples</button>
+  <button class="btn" onclick="filterSelection('fine')"> fine grained</button>
+    <button class="btn" onclick="filterSelection('abstract')"> abstract classes</button>
+<hr>
+</div>
+
+<!-- Portfolio Gallery Grid -->
+
+<div class="row">
+  <div class="column_header_ abstract">
+     <div class="figcaption">
+       <code>abstract exemplars:</code>a sample of PIEs where the class object is in an abstract form, such as a painting, drawing or rendering
+        using a different material.
+    </div>
+    </div>
+    <div class="column_header_ fine">
+    <div class="content">
+       <div class="figcaption">
+      <code>fine grained:</code> a sample of PIEs where the image depicts an object that is semantically close to
+      various other classes present the data set (e.g.,
+      rock crab and fiddler crab, cuirass and breastplate).
+    </div>
+      </div>
+  </div>
+
+  <div class="column_header_ atypical">
+    <div class="content">
+    <div class="figcaption">
+      <code>atypical exemplars:</code> a sample of PIEs where the image would be considered by a human to be an unusual
+      or outlier example from the distribution of images in a given category.
+       </div>
+    </div>
+  </div>
+    <!-- END GRID -->
+</div>
+
+<div class="row">
+  <div class="column_portfolio_ abstract">
+    <div class="content">
+     <img src="https://cdn.glitch.com/a08d19a0-dea5-4f06-9627-caa859e2d931%2F38_toilet_tissue_bath_towel_great_white_shark.png?v=1573469368618" alt="abstract_1" style="width:100%">
+      <div class="figcaption">
+        <code>True Label:</code>
+        <strong_>toilet tissue</strong_><br>
+        <code>Non-Pruned:</code><strong_>bath towel</strong_><br>
+        <code>Pruned:</code><br><strong_>great white shark</strong_>
+         </div>
+    </div>
+  </div>
+  <div class="column_portfolio_ abstract">
+    <div class="content">
+    <img src="https://cdn.glitch.com/a08d19a0-dea5-4f06-9627-caa859e2d931%2F29_cauliflower_cauliflower_artichoke.png?v=1573469365213" alt="abstract_1" style="width:100%">
+       <div class="figcaption">
+         <code>True Label:</code>
+         <strong_>cauliflower</strong_><br>
+         <code>Non-Pruned:</code>
+         <strong_>cauliflower</strong_><br>
+         <code>Pruned:</code><strong_>artichoke</strong_><br>
+       </div>
+    </div>
+  </div>
+  <div class="column_portfolio_ abstract">
+    <div class="content">
+      <img src="https://cdn.glitch.com/a08d19a0-dea5-4f06-9627-caa859e2d931%2F172_sombrero_cowboy_hat_dough.png?v=1573469378538" alt="abstract_1" style="width:100%">
+  <div class="figcaption">
+         <code>True Label:</code>
+         <strong_>sombrero</strong_><br>
+         <code>Non-Pruned:</code>
+         <strong_>cowboy hat</strong_><br>
+         <code>Pruned:</code><strong_>dough</strong_><br>
+       </div>
+    </div>
+  </div>
+
+
+  <div class="column_portfolio_ abstract">
+    <div class="content">
+      <img src="https://cdn.glitch.com/a08d19a0-dea5-4f06-9627-caa859e2d931%2Fbottle.png?v=1573664743810" alt="abstract_1" style="width:100%">
+      <div class="figcaption">
+      <code>True Label:</code>
+         <strong_>pop bottle</strong_><br>
+         <code>Non-Pruned:</code>
+         <strong_>restaurant</strong_><br>
+         <code>Pruned:</code><strong_>barber shop</strong_><br>
+       </div>
+    </div>
+  </div>
+
+
+    <div class="column_portfolio_ atypical">
+    <div class="content">
+      <img src="https://cdn.glitch.com/a08d19a0-dea5-4f06-9627-caa859e2d931%2Fdownload_37.png?v=1573258964605" alt="atypical_2" style="width:100%">
+        <div class="figcaption">
+      <code>True Label:</code>
+         <strong_>bathtub</strong_><br>
+         <code>Non-Pruned:</code>
+         <strong_>bathtub</strong_><br>
+         <code>Pruned:</code><strong_>cucumber</strong_><br>
+       </div>
+    </div>
+  </div>
+  <div class="column_portfolio_ atypical">
+    <div class="content">
+      <img src="https://cdn.glitch.com/a08d19a0-dea5-4f06-9627-caa859e2d931%2Ftoilet_seat.png?v=1573507521082" alt="atypical_2" style="width:100%">
+       <div class="figcaption">
+      <code>True Label:</code>
+         <strong_>toilet seat</strong_><br>
+         <code>Non-Pruned:</code>
+         <strong_>toilet seat</strong_><br>
+         <code>Pruned:</code><strong_>folding chair</strong_><br>
+       </div>
+    </div>
+  </div>
+
+
+    <div class="column_portfolio_ atypical">
+    <div class="content">
+      <img src="https://cdn.glitch.com/a08d19a0-dea5-4f06-9627-caa859e2d931%2Fplastic_bag.png?v=1573663557120" alt="atypical_" style="width:100%">
+         <div class="figcaption">
+      <code>True Label:</code>
+         <strong_>plastic bag</strong_><br>
+         <code>Non-Pruned:</code>
+         <strong_>gown</strong_><br>
+         <code>Pruned:</code><strong_>plastic bag</strong_><br>
+       </div>
+    </div>
+  </div>
+
+
+    <div class="column_portfolio_ atypical">
+    <div class="content">
+      <img src="https://cdn.glitch.com/a08d19a0-dea5-4f06-9627-caa859e2d931%2Fdownload_36.png?v=1573258948893" alt="atypical_" style="width:100%">
+    <div class="figcaption">
+      <code>True Label:</code>
+         <strong_>espresso</strong_><br>
+         <code>Non-Pruned:</code>
+         <strong_>espresso</strong_><br>
+         <code>Pruned:</code><strong_>red wine</strong_><br>
+       </div>
+    </div>
+  </div>
+
+ <div class="column_portfolio_ fine">
+    <div class="content">
+      <img src="https://cdn.glitch.com/a08d19a0-dea5-4f06-9627-caa859e2d931%2F94_coffeepot_espresso_maker_coffeepot.png?v=1573496269717" alt="fine_1" style="width:100%">
+      <div class="figcaption">
+      <code>True Label:</code>
+         <strong_>coffeepot</strong_><br>
+         <code>Non-Pruned:</code>
+         <strong_>espresso maker</strong_><br>
+         <code>Pruned:</code><strong_>coffeepot</strong_><br>
+       </div>
+    </div>
+  </div>
+ <div class="column_portfolio_ fine">
+    <div class="content">
+      <img src="https://cdn.glitch.com/a08d19a0-dea5-4f06-9627-caa859e2d931%2Fcuirass.png?v=1573665382329" alt="fine_1" style="width:100%">
+        <div class="figcaption">
+      <code>True Label:</code>
+         <strong_>cuirass</strong_><br>
+         <code>Non-Pruned:</code>
+         <strong_>breastplate</strong_><br>
+         <code>Pruned:</code><strong_>cuirass</strong_><br>
+       </div>
+    </div>
+  </div>
+
+  <div class="column_portfolio_ fine">
+    <div class="content">
+      <img src="https://cdn.glitch.com/a08d19a0-dea5-4f06-9627-caa859e2d931%2Fcrib.png?v=1573508689310" alt="fine_1" style="width:100%">
+      <div class="figcaption">
+      <code>True Label:</code>
+         <strong_>cradle</strong_><br>
+         <code>Non-Pruned:</code>
+         <strong_>bassinet</strong_><br>
+         <code>Pruned:</code><strong_>cradle</strong_><br>
+       </div>
+    </div>
+  </div>
+
+  <div class="column_portfolio_ fine">
+    <div class="content">
+      <img src="https://cdn.glitch.com/a08d19a0-dea5-4f06-9627-caa859e2d931%2F224_valley_valley_alp.png?v=1573506053550" alt="fine_1" style="width:100%">
+     <div class="figcaption">
+      <code>True Label:</code>
+         <strong_>valley</strong_><br>
+         <code>Non-Pruned:</code>
+         <strong_>valley</strong_><br>
+         <code>Pruned:</code><strong_>alp</strong_><br>
+       </div>
+    </div>
+  </div>
+
+<!-- END GRID -->
+</div>
+
+<div class="row">
+  <div class="column_portfolio_ abstract">
+    <div class="content">
+      <img src="https://cdn.glitch.com/a08d19a0-dea5-4f06-9627-caa859e2d931%2Fdownload_5.png?v=1573258926064" alt="abstract_2" style="width:100%">
+         <div class="figcaption">
+      <code>True Label:</code>
+         <strong_>cloak</strong_><br>
+         <code>Non-Pruned:</code>
+         <strong_>gas mask</strong_><br>
+         <code>Pruned:</code><strong_>breast plate</strong_><br>
+       </div>
+    </div>
+       </div>
+  <div class="column_portfolio_ abstract">
+    <div class="content">
+      <img src="https://cdn.glitch.com/a08d19a0-dea5-4f06-9627-caa859e2d931%2Fgas_pump.png?v=1573483180759" alt="abstract_2" style="width:100%">
+        <div class="figcaption">
+      <code>True Label:</code>
+         <strong_>gas pump</strong_><br>
+         <code>Non-Pruned:</code>
+         <strong_>gas pump</strong_><br>
+         <code>Pruned:</code><strong_>traffic light</strong_><br>
+       </div>
+    </div>
+  </div>
+   <div class="column_portfolio_ abstract">
+    <div class="content">
+      <img src="https://cdn.glitch.com/a08d19a0-dea5-4f06-9627-caa859e2d931%2Fmaze_maze.png?v=1573664345071" alt="abstract_1" style="width:100%">
+          <div class="figcaption">
+      <code>True Label:</code>
+         <strong_>maze</strong_><br>
+         <code>Non-Pruned:</code>
+         <strong_>maze</strong_><br>
+         <code>Pruned:</code><strong_>crossword puzzle</strong_><br>
+       </div>
+    </div>
+  </div>
+
+  <div class="column_portfolio_ abstract">
+    <div class="content">
+      <img src="https://cdn.glitch.com/a08d19a0-dea5-4f06-9627-caa859e2d931%2Fbeer_bottle.png?v=1573670223987" alt="abstract_1" style="width:100%">
+            <div class="figcaption">
+      <code>True Label:</code>
+         <strong_>beer bottle</strong_><br>
+         <code>Non-Pruned:</code>
+         <strong_>beer bottle</strong_><br>
+         <code>Pruned:</code><strong_>sunscreen</strong_><br>
+       </div>
+    </div>
+  </div>
+
+  <div class="column_portfolio_ atypical">
+    <div class="content">
+      <img src="https://cdn.glitch.com/a08d19a0-dea5-4f06-9627-caa859e2d931%2F174_jack_o_lantern_jack_o_lantern_lampshade.png?v=1573494821118" alt="atypical_2" style="width:100%">
+          <div class="figcaption">
+      <code>True Label:</code>
+         <strong_>jack o lantern</strong_><br>
+         <code>Non-Pruned:</code>
+         <strong_>jack o lantern</strong_><br>
+         <code>Pruned:</code><strong_>lampshade</strong_><br>
+       </div>
+    </div>
+  </div>
+
+
+   <div class="column_portfolio_ atypical">
+    <div class="content">
+      <img src="https://cdn.glitch.com/a08d19a0-dea5-4f06-9627-caa859e2d931%2Fdownload_100.png?v=1573258953383" alt="atypical_" style="width:100%">
+        <div class="figcaption">
+      <code>True Label:</code>
+         <strong_>petri dish</strong_><br>
+         <code>Non-Pruned:</code>
+         <strong_>espresso</strong_><br>
+         <code>Pruned:</code><strong_>petri dish</strong_><br>
+       </div>
+    </div>
+  </div>
+    <div class="column_portfolio_ atypical">
+    <div class="content">
+      <img src="https://cdn.glitch.com/a08d19a0-dea5-4f06-9627-caa859e2d931%2Flimo_snow.png?v=1573664910123" alt="atypical_" style="width:100%">
+      <div class="figcaption">
+      <code>True Label:</code>
+         <strong_>limousine</strong_><br>
+         <code>Non-Pruned:</code>
+         <strong_>bob sled</strong_><br>
+         <code>Pruned:</code><strong_>snowplow</strong_><br>
+       </div>
+    </div>
+  </div>
+
+  <div class="column_portfolio_ atypical">
+    <div class="content">
+      <img src="https://cdn.glitch.com/a08d19a0-dea5-4f06-9627-caa859e2d931%2Frocking_chair.png?v=1573662828317" alt="atypical_" style="width:100%">
+       <div class="figcaption">
+      <code>True Label:</code>
+         <strong_>rocking chair</strong_><br>
+         <code>Non-Pruned:</code>
+         <strong_>rocking chair</strong_><br>
+         <code>Pruned:</code><strong_>barber chair</strong_><br>
+       </div>
+    </div>
+  </div>
+
+
+ <div class="column_portfolio_ fine">
+    <div class="content">
+      <img src="https://cdn.glitch.com/a08d19a0-dea5-4f06-9627-caa859e2d931%2Fwhale.png?v=1573506908336" alt="fine_2" style="width:100%">
+      <div class="figcaption">
+      <code>True Label:</code>
+         <strong_>grey whale</strong_><br>
+         <code>Non-Pruned:</code>
+         <strong_>grey whale</strong_><br>
+         <code>Pruned:</code><strong_>killer whale</strong_><br>
+       </div>
+    </div>
+  </div>
+  <div class="column_portfolio_ fine">
+    <div class="content">
+      <img src="https://cdn.glitch.com/a08d19a0-dea5-4f06-9627-caa859e2d931%2Fscreen.png?v=1573506269949" alt="fine_2" style="width:100%">
+     <div class="figcaption">
+      <code>True Label:</code>
+         <strong_>screen</strong_><br>
+         <code>Non-Pruned:</code>
+         <strong_>screen</strong_><br>
+         <code>Pruned:</code><strong_>television</strong_><br>
+       </div>
+    </div>
+  </div>
+  <div class="column_portfolio_ fine">
+    <div class="content">
+      <img src="https://cdn.glitch.com/a08d19a0-dea5-4f06-9627-caa859e2d931%2F365_christmas_stocking_sock_christmas_stocking.png?v=1573507184121" alt="fine_2" style="width:100%">
+      <div class="figcaption">
+      <code>True Label:</code>
+         <strong_>christmas stocking</strong_><br>
+         <code>Non-Pruned:</code>
+         <strong_>sock</strong_><br>
+         <code>Pruned:</code><strong_>christmas stocking</strong_><br>
+       </div>
+    </div>
+  </div>
+
+    <div class="column_portfolio_ fine">
+    <div class="content">
+      <img src="https://cdn.glitch.com/a08d19a0-dea5-4f06-9627-caa859e2d931%2F44_breakwater_lakeside_seashore.png?v=1573665679398" alt="fine_1" style="width:100%">
+         <div class="figcaption">
+      <code>True Label:</code>
+         <strong_>breakwater</strong_><br>
+         <code>Non-Pruned:</code>
+         <strong_>lakeside</strong_><br>
+         <code>Pruned:</code><strong_>seashore</strong_><br>
+       </div>
+    </div>
+  </div>
+
+
+<!-- END GRID -->
+</div>
+</div>
+
+###########################################################################
    <div class="descriptions_">
   <h3>Auditing Datasets</h3>
      </div>
