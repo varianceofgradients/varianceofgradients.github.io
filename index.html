@@ -510,7 +510,7 @@ figcaption .strong_, {
            Click below.</strong_>
   </div>
 <br>
-<div id="myBtnContainer">
+<div id="myBtnContainer_c10">
   <button class="btn active_1" onclick="filterSelection('lowvog')"> Low VoG </button>
   <button class="btn" onclick="filterSelection('highvog')"> High VoG </button>
 <hr>
@@ -656,15 +656,17 @@ figcaption .strong_, {
 </div>
 </div>
 
+########################################################################
+
 <div class="content">
   <hr>
      <div class="figcaption">
-         <strong_>CIFAR-10
+         <strong_>CIFAR-100
            <br><br>
            Click below.</strong_>
   </div>
 <br>
-<div id="myBtnContainer">
+<div id="myBtnContainer_c100">
   <button class="btn active_1" onclick="filterSelection('lowvog')"> Low VoG </button>
   <button class="btn" onclick="filterSelection('highvog')"> High VoG </button>
 <hr>
@@ -1792,8 +1794,8 @@ function RemoveClass(element, name) {
 }
 
 // Add active class to the current button (highlight it)
-var btnContainer1 = document.getElementById("myBtnContainer");
-var btns1 = btnContainer1.getElementsByClassName("btn");
+var btnContainer_c10 = document.getElementById("myBtnContainer_c10");
+var btns1 = btnContainer_c10.getElementsByClassName("btn");
 for (var i = 0; i < btns1.length; i++) {
   btns1[i].addEventListener("click", function(){
     var current1 = document.getElementsByClassName("active_1");
@@ -1801,6 +1803,18 @@ for (var i = 0; i < btns1.length; i++) {
     this.className += " active_1";
   });
 }
+
+var btnContainer_c100 = document.getElementById("myBtnContainer_c100");
+var btns1 = btnContainer_c100.getElementsByClassName("btn");
+for (var i = 0; i < btns1.length; i++) {
+  btns1[i].addEventListener("click", function(){
+    var current1 = document.getElementsByClassName("active_1");
+    current1[0].className = current1[0].className.replace(" active_1", "");
+    this.className += " active_1";
+  });
+}
+
+
 
 // Add active class to the current button (highlight it)
 var btnContainer2 = document.getElementById("myBtnContainer_2");
