@@ -418,7 +418,7 @@
   background-color: #ddd;
 }
 /* Add a dark background color to the active button */
-.btn.active_1, .btn.active_2, .btn.active_3, .btn.active_4, .btn:target
+.btn.active_c10,.btn.active_c100, .btn.active_1, .btn.active_2, .btn.active_3, .btn.active_4, .btn:target
 { background:linear-gradient(to right, #666 3%, #666  100%);
   color: white;
   cursor:none;
@@ -511,7 +511,7 @@ figcaption .strong_, {
   </div>
 <br>
 <div id="myBtnContainer_c10">
-  <button class="btn active_1" onclick="filterSelection('lowvogc10')"> Low VoG </button>
+  <button class="btn active_c10" onclick="filterSelection('lowvogc10')"> Low VoG </button>
   <button class="btn" onclick="filterSelection('highvogc10')"> High VoG </button>
 <hr>
 </div>
@@ -667,7 +667,7 @@ figcaption .strong_, {
   </div>
 <br>
 <div id="myBtnContainer_c100">
-  <button class="btn active_1" onclick="filterSelection('lowvogc100')"> Low VoG </button>
+  <button class="btn active_c100" onclick="filterSelection('lowvogc100')"> Low VoG </button>
   <button class="btn" onclick="filterSelection('highvogc100')"> High VoG </button>
 <hr>
 </div>
@@ -1819,9 +1819,9 @@ var btnContainer_c10 = document.getElementById("myBtnContainer_c10");
 var btns1 = btnContainer_c10.getElementsByClassName("btn");
 for (var i = 0; i < btns1.length; i++) {
   btns1[i].addEventListener("click", function(){
-    var current1 = document.getElementsByClassName("active_1");
-    current1[0].className = current1[0].className.replace(" active_1", "");
-    this.className += " active_1";
+    var current1 = document.getElementsByClassName("active_c10");
+    current1[0].className = current1[0].className.replace(" active_c10", "");
+    this.className += " active_c10";
   });
 }
 
@@ -1829,9 +1829,9 @@ var btnContainer_c100 = document.getElementById("myBtnContainer_c100");
 var btns1 = btnContainer_c100.getElementsByClassName("btn");
 for (var i = 0; i < btns1.length; i++) {
   btns1[i].addEventListener("click", function(){
-    var current1 = document.getElementsByClassName("active_1");
-    current1[0].className = current1[0].className.replace(" active_1", "");
-    this.className += " active_1";
+    var current1 = document.getElementsByClassName("active_c100");
+    current1[0].className = current1[0].className.replace(" active_c100", "");
+    this.className += " active_c100";
   });
 }
 
