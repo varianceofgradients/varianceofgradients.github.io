@@ -460,7 +460,7 @@ figcaption .strong_, {
             </a>
           </div>
         </div>
-        <div class="title"><h2>Estimating Example Difficulty using Variance of Gradients</h2></div>
+        <div class="title"><h2>VEstimating Example Difficulty using Variance of Gradients</h2></div>
         <div class="authors">Chirag Agarwal, Sara Hooker</div>
 <!--          <div class="authors">Chirag Agarwal, Daniel D'souza, Sara Hooker</div>-->
       <div class="institutions"></div>
@@ -666,8 +666,8 @@ figcaption .strong_, {
            Click below.</strong_>
   </div>
 <br>
-<div id="myBtnContainer_c100">
-  <button class="btn active_1" onclick="filterSelection('lowvog')"> Low VoG </button>
+<div id="myBtnContainer_2">
+  <button class="btn active_2" onclick="filterSelection('lowvog')"> Low VoG </button>
   <button class="btn" onclick="filterSelection('highvog')"> High VoG </button>
 <hr>
 </div>
@@ -1794,8 +1794,8 @@ function RemoveClass(element, name) {
 }
 
 // Add active class to the current button (highlight it)
-var btnContainer_c10 = document.getElementById("myBtnContainer_c10");
-var btns1 = btnContainer_c10.getElementsByClassName("btn");
+var btnContainer_1 = document.getElementById("myBtnContainer_1");
+var btns1 = btnContainer_1.getElementsByClassName("btn");
 for (var i = 0; i < btns1.length; i++) {
   btns1[i].addEventListener("click", function(){
     var current1 = document.getElementsByClassName("active_1");
@@ -1804,13 +1804,13 @@ for (var i = 0; i < btns1.length; i++) {
   });
 }
 
-var btnContainer_c100 = document.getElementById("myBtnContainer_c100");
-var btns1 = btnContainer_c100.getElementsByClassName("btn");
-for (var i = 0; i < btns1.length; i++) {
-  btns1[i].addEventListener("click", function(){
-    var current1 = document.getElementsByClassName("active_1");
-    current1[0].className = current1[0].className.replace(" active_1", "");
-    this.className += " active_1";
+var btnContainer_2 = document.getElementById("myBtnContainer_2");
+var btns2 = btnContainer_2.getElementsByClassName("btn");
+for (var i = 0; i < btns2.length; i++) {
+  btns2[i].addEventListener("click", function(){
+    var current1 = document.getElementsByClassName("active_2");
+    current1[0].className = current1[0].className.replace(" active_2", "");
+    this.className += " active_2";
   });
 }
 
