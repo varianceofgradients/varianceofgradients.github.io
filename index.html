@@ -502,6 +502,13 @@ figcaption .strong_, {
 
         <p> VoG can be an effective tool to audit high-dimensional datasets. Below, we plot images from late-stage training for randomly selected classes from CIFAR-10 and CIFAR-100 </p>
 
+<br>
+<div id="myBtnContainer_1">
+  <button class="btn active_1" onclick="filterSelection('lowvog')"> Low VoG </button>
+  <button class="btn" onclick="filterSelection('highvog')"> High VoG </button>
+<hr>
+</div>
+
       <div class="content">
   <hr>
      <div class="figcaption">
@@ -509,12 +516,7 @@ figcaption .strong_, {
            <br><br>
            Click below.</strong_>
   </div>
-<br>
-<div id="myBtnContainer_1">
-  <button class="btn active_1" onclick="filterSelection('lowvog')"> Low VoG </button>
-  <button class="btn" onclick="filterSelection('highvog')"> High VoG </button>
-<hr>
-</div>
+
 
 <!-- Portfolio Gallery Grid -->
 
@@ -661,16 +663,16 @@ figcaption .strong_, {
 <div class="content">
   <hr>
      <div class="figcaption">
-         <strong_>CIFAR-100
-           <br><br>
-           Click below.</strong_>
+         <strong_>CIFAR-100</strong_>
+<!--           <br><br>-->
+<!--           Click below.</strong_>-->
   </div>
 <br>
-<div id="myBtnContainer_2">
-  <button class="btn active_2" onclick="filterSelection('lowvog')"> Low VoG </button>
-  <button class="btn" onclick="filterSelection('highvog')"> High VoG </button>
-<hr>
-</div>
+<!--<div id="myBtnContainer_2">-->
+<!--  <button class="btn active_2" onclick="filterSelection('lowvog')"> Low VoG </button>-->
+<!--  <button class="btn" onclick="filterSelection('highvog')"> High VoG </button>-->
+<!--<hr>-->
+<!--</div>-->
 
 <!-- Portfolio Gallery Grid -->
 
@@ -1803,17 +1805,6 @@ for (var i = 0; i < btns1.length; i++) {
     this.className += " active_1";
   });
 }
-
-var btnContainer_2 = document.getElementById("myBtnContainer_2");
-var btns2 = btnContainer_2.getElementsByClassName("btn");
-for (var i = 0; i < btns2.length; i++) {
-  btns2[i].addEventListener("click", function(){
-    var current1 = document.getElementsByClassName("active_2");
-    current1[0].className = current1[0].className.replace(" active_2", "");
-    this.className += " active_2";
-  });
-}
-
 
 
 // // Add active class to the current button (highlight it)
