@@ -418,7 +418,7 @@
   background-color: #ddd;
 }
 /* Add a dark background color to the active button */
-.btn.active1, .btn.active2, .btn.active_3, .btn.active_4, .btn:target
+.btn.active_1, .btn.active_2, .btn.active_3, .btn.active_4, .btn:target
 { background:linear-gradient(to right, #666 3%, #666  100%);
   color: white;
   cursor:none;
@@ -511,7 +511,7 @@ figcaption .strong_, {
   </div>
 <br>
 <div id="myBtnContainer_1">
-  <button class="btn active1" onclick="filterSelection('lowvog1')"> Low VoG </button>
+  <button class="btn active_1" onclick="filterSelection('lowvog1')"> Low VoG </button>
   <button class="btn" onclick="filterSelection('highvog1')"> High VoG </button>
 <hr>
 </div>
@@ -667,7 +667,7 @@ figcaption .strong_, {
   </div>
 <br>
 <div id="myBtnContainer_2">
-  <button class="btn active2" onclick="filterSelection('lowvog2')"> Low VoG </button>
+  <button class="btn active_2" onclick="filterSelection('lowvog2')"> Low VoG </button>
   <button class="btn" onclick="filterSelection('highvog2')"> High VoG </button>
 <hr>
 </div>
@@ -829,7 +829,7 @@ figcaption .strong_, {
 <!--  </div>-->
 <!--<br>-->
 <!--<div id="myBtnContainer">-->
-<!--  <button class="btn active1" onclick="filterSelection('atypical')"> atypical examples</button>-->
+<!--  <button class="btn active_1" onclick="filterSelection('atypical')"> atypical examples</button>-->
 <!--  <button class="btn" onclick="filterSelection('fine')"> fine grained</button>-->
 <!--    <button class="btn" onclick="filterSelection('abstract')"> abstract classes</button>-->
 <!--<hr>-->
@@ -1570,7 +1570,7 @@ figcaption .strong_, {
 <!--  </div>-->
 <!--  <br>-->
 <!--  <div id="myBtnContainer_2">-->
-<!--  <button class="btn active2" onclick="filterSelection_('pie')"> generalization to pie </button>-->
+<!--  <button class="btn active_2" onclick="filterSelection_('pie')"> generalization to pie </button>-->
 <!--  <button class="btn" onclick="filterSelection_('without')"> generalization excluding pie</button>-->
 <!--<hr>-->
 
@@ -1816,19 +1816,19 @@ var btnContainer_1 = document.getElementById("myBtnContainer_1");
 var btns1 = btnContainer_1.getElementsByClassName("btn");
 for (var i = 0; i < btns1.length; i++) {
   btns1[i].addEventListener("click", function(){
-    var current1 = document.getElementsByClassName("active1");
-    current1[0].className = current1[0].className.replace(" active1", "");
-    this.className += " active1";
+    var current1 = document.getElementsByClassName("active_1");
+    current1[0].className = current1[0].className.replace(" active_1", "");
+    this.className += " active_1";
   });
 }
 
 var btnContainer_c2 = document.getElementById("myBtnContainer_2");
-var btns1 = btnContainer_c2.getElementsByClassName("btn");
-for (var i = 0; i < btns1.length; i++) {
-  btns1[i].addEventListener("click", function(){
-    var current1 = document.getElementsByClassName("active2");
-    current1[0].className = current1[0].className.replace(" active2", "");
-    this.className += " active2";
+var btns2 = btnContainer_c2.getElementsByClassName("btn");
+for (var i = 0; i < btns2.length; i++) {
+  btns2[i].addEventListener("click", function(){
+    var current1 = document.getElementsByClassName("active_2");
+    current1[0].className = current1[0].className.replace(" active_2", "");
+    this.className += " active_2";
   });
 }
 
@@ -1839,9 +1839,9 @@ for (var i = 0; i < btns1.length; i++) {
 // var btns2 = btnContainer2.getElementsByClassName("btn");
 // for (var i = 0; i < btns2.length; i++) {
 //   btns2[i].addEventListener("click", function(){
-//     var current2 = document.getElementsByClassName("active2");
-//     current2[0].className = current2[0].className.replace(" active2", "");
-//     this.className += " active2";
+//     var current2 = document.getElementsByClassName("active_2");
+//     current2[0].className = current2[0].className.replace(" active_2", "");
+//     this.className += " active_2";
 //   });
 // }
 //
