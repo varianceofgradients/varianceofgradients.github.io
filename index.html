@@ -500,13 +500,27 @@ figcaption .strong_, {
      </div>
    <div class="description_">
 
-        <p> VoG can be an effective tool to audit high-dimensional datasets. Below, we plot images from late-stage training for randomly selected classes from CIFAR-10 and CIFAR-100 </p>
+        <p> VoG can be an effective tool to audit high-dimensional datasets. Below, we plot images from late-stage training for randomly selected classes from CIFAR-10 and CIFAR-100. We consistent results in differences between Low VoG and High VoG samples across both datasets. </p>
 
 <br>
+<strong_>Click below.</strong_>
 <div id="myBtnContainer_1">
   <button class="btn active_1" onclick="filterSelection('lowvog')"> Low VoG </button>
   <button class="btn" onclick="filterSelection('highvog')"> High VoG </button>
 <!--<hr>-->
+</div>
+
+<div class="row">
+  <div class="column_header_ lowvog">
+     <div class="figcaption">
+       <code>Low VoG exemplars:</code>Images that are assigned low VoG scores tend to have clear, distinct images of the class in question. We also observe different color bias patterns emerge during early training.
+     </div>
+  </div>
+  <div class="column_header_ highvog">
+      <div class="figcaption">
+        <code>High VoG exemplars:</code>Images that are assigned high VoG scores usually contain unusual vantage points and/or have obstructed views of the class.
+      </div>
+  </div>
 </div>
 
       <div class="content">
