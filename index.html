@@ -460,6 +460,11 @@ figcaption .strong_, {
             </a>
           </div>
           <div class="paper-icon" style="margin-left: 20px">
+            <a href="https://github.com/chirag126/VOG">
+              <img src="./figures/website/code.png" style="width: 100px"/><br>Code
+            </a>
+          </div>
+          <div class="paper-icon" style="margin-left: 20px">
             <a href="https://colab.research.google.com/drive/1jyWIwMj69PpsBBF_zhwE46MCTxJaRxX5?usp=sharing">
               <img src="https://cdn.glitch.com/a08d19a0-dea5-4f06-9627-caa859e2d931%2Fcode_icon.png?v=1572562103868" style="width: 100px"/><br>Notebook(Google Colab)
             </a>
@@ -485,7 +490,7 @@ figcaption .strong_, {
          <strong_>During the early training stages, Lower VoG appears to capture a color(red) bias. During Late Stage Training, Lower VoG images evidence uncluttered backgrounds. High VoG images present unusual vantage points throughout training.</strong_><br>
        </div>
              </div>
-         <p>In this work, we start with a simple hypothesis – examples that a model has difficulty learning will exhibit higher variance in gradient updates over the course of training. On the other hand, we expect the backpropagated gradients of the samples that are relatively easier to learn will have lower variance because performance on that example does not consistently dominate the loss over the course of training, i.e., the gradient updates for the relatively easier examples are expected to stabilize early in training and converge to a narrow range of values. We term this measure of difficulty class normalized ranking mechanism Variance of Gradients (V OG) and demonstrate across a variety of large-scale datasets that it efficiently ranks the difficulty of both training and test examples. V OG can be computed using either the predicted or true label, making it a valuable unsupervised auditing tool at test time when the true label is unknown. </p>
+         <p>In this work, we start with a simple hypothesis – examples that a model has difficulty learning will exhibit higher variance in gradient updates over the course of training. On the other hand, we expect the backpropagated gradients of the samples that are relatively easier to learn will have lower variance because performance on that example does not consistently dominate the loss over the course of training, i.e., the gradient updates for the relatively easier examples are expected to stabilize early in training and converge to a narrow range of values. We term this measure of difficulty class normalized ranking mechanism Variance of Gradients (VOG) and demonstrate across a variety of large-scale datasets that it efficiently ranks the difficulty of both training and test examples. VOG can be computed using either the predicted or true label, making it a valuable unsupervised auditing tool at test time when the true label is unknown. </p>
   <div>
 
            <div class="imgs-container">
