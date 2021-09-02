@@ -486,7 +486,7 @@ figcaption .strong_, {
          <div class="description_">
           <p>In machine learning, a question of great interest is understanding what examples are challenging for a model to classify. Identifying atypical examples helps inform safe deployment of models, isolates examples that require further human inspection, and provides interpretability into model behavior. In this work, we propose Variance of Gradients (VOG) as a valuable and efficient proxy metric for detecting outliers in the data distribution. We provide quantitative and qualitative support that VOG is a meaningful way to rank data by difficulty and to surface a tractable subset of the most challenging examples for human-in-the-loop auditing. Data points with high VOG scores are far more difficult for the model to learn and over-index on corrupted or memorized examples</p>
 
-          <p>It is becoming increasingly important for deep neural networks (DNNs) to make decisions that are interpretable to both researchers and end-users. In sensitive domains such as health care diagnostics. Our work offers an efficient method to rank the global difficulty of examples and automatically surface a possible subset to aid human interpretability. VOG can be computed using checkpoints stored over the course of training and is model agnostic. Alternatively, VOG can be computed using the predicted label, which makes it an unsupervised auditing tool at test time.</p>
+          <p>Our work offers an efficient method to rank the global difficulty of examples and automatically surface a possible subset to aid human interpretability. VOG can be computed using checkpoints stored over the course of training and is model agnostic. Alternatively, VOG can be computed using the predicted label, which makes it an unsupervised auditing tool at test time.</p>
 
                  <div class="content_reduced_slightly">
      <img src="./figures/cifar100_apple_pre.jpg" alt="abstract_pre" style="width:100%">
@@ -495,7 +495,7 @@ figcaption .strong_, {
          <strong_>During the early training stages, Lower VoG appears to capture a color(red) bias. During Late Stage Training, Lower VoG images evidence uncluttered backgrounds. High VoG images present unusual vantage points throughout training.</strong_><br>
        </div>
              </div>
-         <p>In this work, we start with a simple hypothesis – examples that a model has difficulty learning will exhibit higher variance in gradient updates over the course of training. On the other hand, we expect the backpropagated gradients of the samples that are relatively easier to learn will have lower variance because performance on that example does not consistently dominate the loss over the course of training, i.e., the gradient updates for the relatively easier examples are expected to stabilize early in training and converge to a narrow range of values. We term this measure of difficulty class normalized ranking mechanism Variance of Gradients (VOG) and demonstrate across a variety of large-scale datasets that it efficiently ranks the difficulty of both training and test examples. VOG can be computed using either the predicted or true label, making it a valuable unsupervised auditing tool at test time when the true label is unknown. </p>
+         <p>We start with a simple hypothesis – examples that a model has difficulty learning will exhibit higher variance in gradient updates over the course of training. On the other hand, we expect the backpropagated gradients of the samples that are relatively easier to learn will have lower variance because performance on that example does not consistently dominate the loss over the course of training, i.e., the gradient updates for the relatively easier examples are expected to stabilize early in training and converge to a narrow range of values. We term this measure of difficulty class normalized ranking mechanism Variance of Gradients (VOG) and demonstrate across a variety of large-scale datasets that it efficiently ranks the difficulty of both training and test examples. </p>
   <div>
 
            <div class="imgs-container">
@@ -514,7 +514,7 @@ figcaption .strong_, {
      </div>
    <div class="description_">
 
-        <p> VoG can be an effective tool to audit high-dimensional datasets. Below, we plot images from late-stage training for randomly selected classes from CIFAR-10 and CIFAR-100. We consistent results in differences between Low VoG and High VoG samples across both datasets. </p>
+        <p> VoG can be an effective tool to audit high-dimensional datasets. Below, we plot images from late-stage training for randomly selected classes from CIFAR-10 and CIFAR-100. We observe consistent results in differences between Low VoG and High VoG samples across both datasets. </p>
 
 <br>
 <strong_>Click below.</strong_>
@@ -527,7 +527,7 @@ figcaption .strong_, {
 <div class="row">
   <div class="column_header_ lowvog">
      <div class="figcaption">
-       <code>Low VoG exemplars:</code> Images that are assigned low VoG scores tend to have clear, distinct images of the class in question. We also observe different color bias patterns emerge during early training.
+       <code>Low VoG exemplars:</code> Images that are assigned low VoG scores tend to have clear, distinct images of the class in question. We also observe different color bias patterns emerge during early training for certain classes.
      </div>
   </div>
   <div class="column_header_ highvog">
